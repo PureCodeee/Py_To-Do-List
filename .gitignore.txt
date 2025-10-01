@@ -1,0 +1,2 @@
+echo tasks.txt > .gitignore
+echo __pycache__/ >> .gitignore
