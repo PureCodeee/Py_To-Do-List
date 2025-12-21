@@ -1,7 +1,7 @@
 import json
 import sys
 
-version = 0.0004
+version = 0.0005
 print(f'To-Do List alpha version {version}')
 
 class Task:
@@ -115,38 +115,6 @@ class TaskManager:
         print('Все задачи удалены.')
 
 
-# def delete_task(number):
-#     try:
-#         with open('tasks.txt', 'r', encoding='utf-8') as file:
-#             tasks = file.readlines()
-        
-#         if not tasks:
-#             print('Список задач пуст!')
-#             return
-        
-#         index = int(number) - 1
-
-#         if 0 <= index < len(tasks):
-#             removed_task = tasks[index].strip()
-
-#             del tasks[index]
-
-#             with open('tasks.txt', 'w', encoding='utf-8') as file:
-#                 file.writelines(tasks)
-#             print(f'Задача {number}. "{removed_task}" удалена!')
-#         else:
-#             print('неверный номер задачи!')
-        
-#     except ValueError:
-#         print('Пожалуйста введите число')
-#     except Exception as e:
-#         print(f'Ошибка при удалении: {e}')
-
-# def delete_all_tasks():
-#     with open('tasks.txt', 'w', encoding='utf-8') as file:
-#         pass
-#     print('Все задачи удалены!')
-
 # def edit_task():
 #      try:
 #         with open('tasks.txt', 'r', encoding='utf-8') as file:
@@ -171,13 +139,13 @@ class TaskManager:
 #      except ValueError:
 #          print('Пожалуйста, введите число!')
 def menu():
-     print('')
-     print('1. П0смотреть задачи')
-     print('2. Д0бавить задачу')
-     print('3. Удалить задачу')
-     print('4. Редактировать задачу')
-     print('5. Удалить все задачи')
-     print('6. Выйти\n')
+    print('===============================')
+    print('1. П0смотреть задачи')
+    print('2. Д0бавить задачу')
+    print('3. Удалить задачу')
+    print('4. Редактировать задачу')
+    print('5. Удалить все задачи')
+    print('6. Выйти\n')
 
 
 def main():
@@ -216,10 +184,10 @@ def main():
         # elif choice == '4':
         #     edit_task()
 
-        # elif choice == '5':
-        #     accept = input('Вы действительно хотите удалить все задачи?(да/нет)\n')
-        #     if accept == 'да':
-        #         delete_all_tasks()
+        elif choice == '5':
+            accept = input('Вы действительно хотите удалить все задачи?(да/нет)\n')
+            if accept == 'да':
+                manager.delete_all_tasks()
 
 
 if __name__ == "__main__":
